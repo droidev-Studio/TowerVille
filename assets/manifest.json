@@ -1,0 +1,105 @@
+{
+  "basePath": "assets/",
+  "assetArchitecture": {
+    "version": 1,
+    "domains": {
+      "Audio & Feel": ["audio", "effects"],
+      "Game Art": ["bosses", "enemies", "map", "map/main", "map/collision-prefabs", "minibosses", "pickups", "skills", "weapons"],
+      "Ui Art": ["opening", "run-entry"],
+      "Visual Style": ["map", "map/collision", "player", "portal", "style-proofs"]
+    }
+  },
+  "images": {
+    "player": {
+      "villager": { "src": "Visual Style/player/villager.svg" }
+    },
+    "enemy": {
+      "grumpyMushroom": { "src": "Game Art/enemies/grumpy-mushroom.svg" },
+      "tangledVine": { "src": "Game Art/enemies/tangled-vine.svg" },
+      "shellCrab": { "src": "Game Art/enemies/shell-crab.svg" },
+      "sleepyGhost": { "src": "Game Art/enemies/sleepy-ghost.svg" },
+      "toyKnight": { "src": "Game Art/enemies/toy-knight.svg" }
+    },
+    "boss": {
+      "sleepyTreeSpirit": { "src": "Game Art/bosses/sleepy-tree-spirit.svg" }
+    },
+    "map": {
+      "floorTile": { "src": "Game Art/map/main/floor-tile.svg" },
+      "wallTile": { "src": "Game Art/map/main/wall-tile.svg" },
+      "entranceTile": { "src": "Game Art/map/main/entrance-tile.svg" },
+      "stairsTile": { "src": "Game Art/map/main/stairs-tile.svg" },
+      "honeyDoor": { "src": "Game Art/map/main/honey-door.svg" },
+      "shellDoor": { "src": "Game Art/map/main/shell-door.svg" },
+      "mushroomDoor": { "src": "Game Art/map/main/mushroom-door.svg" }
+    },
+    "town": {
+      "background": { "src": "Visual Style/map/66bf570f-4137-4365-a96a-8055ca30776a.png" },
+      "collision": {
+        "cottage": { "src": "Visual Style/map/collision/cottage.png" },
+        "trainingStump": { "src": "Visual Style/map/collision/stump.png" },
+        "guardianLeaf": { "src": "Visual Style/map/collision/leaf.png" },
+        "keyShop": { "src": "Visual Style/map/collision/key shop.png" },
+        "luckyWindChime": { "src": "Visual Style/map/collision/chime.png" },
+        "furnitureCorner": { "src": "Visual Style/map/collision/furniture.png" },
+        "towerEntry": { "src": "Visual Style/map/collision/Tower Entrance.png" }
+      }
+    },
+    "pickup": {
+      "smallHeart": { "src": "Game Art/pickups/small-heart.svg" },
+      "bigHeart": { "src": "Game Art/pickups/big-heart.svg" },
+      "attackFlower": { "src": "Game Art/pickups/attack-flower.svg" },
+      "defenseLeaf": { "src": "Game Art/pickups/defense-leaf.svg" },
+      "coinBag": { "src": "Game Art/pickups/coin-bag.svg" },
+      "yellowKey": { "src": "Game Art/pickups/yellow-key.svg" },
+      "blueKey": { "src": "Game Art/pickups/blue-key.svg" },
+      "coinChest": { "src": "Game Art/pickups/coin-chest.svg" },
+      "growthChest": { "src": "Game Art/pickups/growth-chest.svg" },
+      "starlightChest": { "src": "Game Art/pickups/starlight-chest.svg" }
+    },
+    "skill": {
+      "starKey": { "src": "Game Art/skills/star-key.svg" },
+      "honeyShield": { "src": "Game Art/skills/honey-shield.svg" },
+      "shellBackpack": { "src": "Game Art/skills/shell-backpack.svg" },
+      "petalSword": { "src": "Game Art/skills/petal-sword.svg" },
+      "mushroomFriend": { "src": "Game Art/skills/mushroom-friend.svg" },
+      "windChimeSense": { "src": "Game Art/skills/wind-chime-sense.svg" }
+    },
+    "ui": {
+      "cottage": { "src": "Ui Art/run-entry/cottage.svg" },
+      "trainingStump": { "src": "Ui Art/run-entry/training-stump.svg" },
+      "guardianLeaf": { "src": "Ui Art/run-entry/guardian-leaf.svg" },
+      "keyShop": { "src": "Ui Art/run-entry/key-shop.svg" },
+      "luckyWindChime": { "src": "Ui Art/run-entry/lucky-wind-chime.svg" },
+      "furnitureCorner": { "src": "Ui Art/run-entry/furniture-corner.svg" },
+      "towerEntry": { "src": "Ui Art/run-entry/tower-entry.svg" },
+      "lostPostbird": { "src": "Ui Art/run-entry/lost-postbird.svg" },
+      "mysteryTreeHole": { "src": "Ui Art/run-entry/mystery-tree-hole.svg" },
+      "mushroomTeaParty": { "src": "Ui Art/run-entry/mushroom-tea-party.svg" },
+      "tanukiMerchant": { "src": "Ui Art/run-entry/tanuki-merchant.svg" },
+      "sleepyTreeLamp": { "src": "Ui Art/run-entry/sleepy-tree-lamp.svg" }
+    }
+  },
+  "audio": {
+    "bgm": {
+      "town": { "src": "Audio & Feel/audio/town-bgm.wav" },
+      "tower": { "src": "Audio & Feel/audio/tower-bgm.wav" }
+    },
+    "sfx": {
+      "move": { "src": "Audio & Feel/audio/move.wav" },
+      "door": { "src": "Audio & Feel/audio/door.wav" },
+      "pickup": { "src": "Audio & Feel/audio/pickup.wav" },
+      "chest": { "src": "Audio & Feel/audio/chest.wav" },
+      "combat": { "src": "Audio & Feel/audio/combat.wav" },
+      "blocked": { "src": "Audio & Feel/audio/blocked.wav" },
+      "blessing": { "src": "Audio & Feel/audio/blessing.wav" },
+      "event": { "src": "Audio & Feel/audio/event.wav" },
+      "buy": { "src": "Audio & Feel/audio/buy.wav" },
+      "boss": { "src": "Audio & Feel/audio/boss.wav" },
+      "win": { "src": "Audio & Feel/audio/win.wav" },
+      "rest": { "src": "Audio & Feel/audio/rest.wav" },
+      "start": { "src": "Audio & Feel/audio/start.wav" }
+    }
+  },
+  "effects": {},
+  "notes": "Animal Island style SVG assets are loaded through this manifest. Canvas fallback remains available if an asset fails to load."
+}

@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "notes": "Prefab data separates main map visuals from collision/blocking rules. Runtime still reads final entities and levels, while this file documents reusable collision behavior for future editors.",
+  "main": {
+    "floor_tile": {
+      "kind": "terrain",
+      "terrain": "floor",
+      "assetKey": "map.floorTile",
+      "collisionPrefab": "walkable_floor"
+    },
+    "wall_tile": {
+      "kind": "terrain",
+      "terrain": "wall",
+      "assetKey": "map.wallTile",
+      "collisionPrefab": "solid_wall"
+    },
+    "entrance_tile": {
+      "kind": "terrain",
+      "terrain": "entrance",
+      "assetKey": "map.entranceTile",
+      "collisionPrefab": "walkable_floor"
+    },
+    "stairs_tile": {
+      "kind": "terrain",
+      "terrain": "stairs",
+      "assetKey": "map.stairsTile",
+      "collisionPrefab": "stairs_trigger"
+    },
+    "honey_door": {
+      "kind": "door",
+      "entityId": "door_yellow",
+      "assetKey": "map.honeyDoor",
+      "collisionPrefab": "locked_door"
+    },
+    "shell_door": {
+      "kind": "door",
+      "entityId": "door_blue",
+      "assetKey": "map.shellDoor",
+      "collisionPrefab": "locked_door"
+    },
+    "mushroom_door": {
+      "kind": "door",
+      "entityId": "door_red",
+      "assetKey": "map.mushroomDoor",
+      "collisionPrefab": "locked_door"
+    }
+  },
+  "collisionPrefabs": {
+    "walkable_floor": {
+      "blocksMovement": false,
+      "trigger": "none",
+      "runtimeTypes": ["floor", "entrance"]
+    },
+    "solid_wall": {
+      "blocksMovement": true,
+      "trigger": "blocked",
+      "runtimeTypes": ["wall"]
+    },
+    "stairs_trigger": {
+      "blocksMovement": false,
+      "trigger": "stairs",
+      "runtimeTypes": ["stairs"]
+    },
+    "locked_door": {
+      "blocksMovement": true,
+      "trigger": "consume_key",
+      "runtimeTypes": ["door"],
+      "clearsOnResolve": true
+    },
+    "enemy_blocker": {
+      "blocksMovement": true,
+      "trigger": "single_hit_combat",
+      "runtimeTypes": ["enemy", "boss"],
+      "clearsOnResolve": "whenHpZero"
+    },
+    "pickup_trigger": {
+      "blocksMovement": false,
+      "trigger": "pickup",
+      "runtimeTypes": ["pickup"],
+      "clearsOnResolve": true
+    },
+    "event_trigger": {
+      "blocksMovement": false,
+      "trigger": "event_modal",
+      "runtimeTypes": ["event"],
+      "clearsOnResolve": true
+    },
+    "shop_trigger": {
+      "blocksMovement": false,
+      "trigger": "shop_modal",
+      "runtimeTypes": ["shop"],
+      "clearsOnResolve": false
+    }
+  }
+}

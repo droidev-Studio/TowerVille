@@ -1,0 +1,946 @@
+{
+  "enemies": {
+    "grumpy_mushroom": {
+      "name": "Grumpy Mushroom",
+      "hp": 14,
+      "attack": 8,
+      "defense": 2,
+      "hpGrowth": 2,
+      "attackGrowth": 1,
+      "reward": {
+        "coins": 3
+      },
+      "assetKey": "enemy.grumpyMushroom",
+      "color": "#e18c6f"
+    },
+    "tangled_vine": {
+      "name": "Tangled Vine",
+      "hp": 18,
+      "attack": 10,
+      "defense": 5,
+      "hpGrowth": 2,
+      "attackGrowth": 1,
+      "reward": {
+        "yellowKeys": 1
+      },
+      "assetKey": "enemy.tangledVine",
+      "color": "#8ac68a"
+    },
+    "shell_crab": {
+      "name": "Shell Crab",
+      "hp": 24,
+      "attack": 14,
+      "defense": 4,
+      "hpGrowth": 3,
+      "attackGrowth": 2,
+      "reward": {
+        "coins": 6
+      },
+      "assetKey": "enemy.shellCrab",
+      "color": "#82d5bb"
+    },
+    "sleepy_ghost": {
+      "name": "Drowsy Little Ghost",
+      "hp": 22,
+      "attack": 18,
+      "defense": 8,
+      "hpGrowth": 3,
+      "attackGrowth": 2,
+      "reward": {
+        "blessingChoice": 1
+      },
+      "assetKey": "enemy.sleepyGhost",
+      "color": "#b77dee"
+    },
+    "toy_knight": {
+      "name": "Toy Knight",
+      "hp": 34,
+      "attack": 22,
+      "defense": 12,
+      "hpGrowth": 4,
+      "attackGrowth": 2,
+      "reward": {
+        "blueKeys": 1
+      },
+      "assetKey": "enemy.toyKnight",
+      "color": "#889df0"
+    },
+    "training_dummy": {
+      "name": "Training Dummy Spirit",
+      "hp": 20,
+      "attack": 12,
+      "defense": 0,
+      "hpGrowth": 3,
+      "attackGrowth": 1,
+      "reward": {
+        "attack": 1
+      },
+      "assetKey": "enemy.toyKnight",
+      "color": "#e59266"
+    }
+  },
+  "bosses": {
+    "sleepy_tree_spirit": {
+      "name": "Drowsy Tree Spirit",
+      "hp": 50,
+      "attack": 16,
+      "defense": 13,
+      "reward": {
+        "coins": 25,
+        "starlightShards": 3,
+        "furnitureBlueprints": [
+          "sleepy_tree_lamp"
+        ]
+      },
+      "assetKey": "boss.sleepyTreeSpirit",
+      "color": "#9a835a"
+    }
+  },
+  "doors": {
+    "door_yellow": {
+      "name": "Honeywood Door",
+      "keyType": "yellowKeys",
+      "keyName": "Yellow Key",
+      "keyCost": 1,
+      "assetKey": "map.honeyDoor",
+      "color": "#f7cd67"
+    },
+    "door_blue": {
+      "name": "Shell Door",
+      "keyType": "blueKeys",
+      "keyName": "Blue Key",
+      "keyCost": 1,
+      "assetKey": "map.shellDoor",
+      "color": "#82d5bb"
+    },
+    "door_red": {
+      "name": "Mushroom Door",
+      "keyType": "redKeys",
+      "keyName": "Red Key",
+      "keyCost": 1,
+      "assetKey": "map.mushroomDoor",
+      "color": "#fc736d"
+    }
+  },
+  "pickups": {
+    "small_heart": {
+      "name": "Small Heart",
+      "effect": {
+        "hp": 5
+      },
+      "scalesWithFloor": true,
+      "scaleKey": "smallHeart",
+      "assetKey": "pickup.smallHeart",
+      "color": "#fc736d"
+    },
+    "big_heart": {
+      "name": "Big Heart",
+      "effect": {
+        "hp": 15
+      },
+      "scalesWithFloor": true,
+      "scaleKey": "bigHeart",
+      "assetKey": "pickup.bigHeart",
+      "color": "#e05a5a"
+    },
+    "attack_flower": {
+      "name": "Attack Flower",
+      "effect": {
+        "attack": 1
+      },
+      "assetKey": "pickup.attackFlower",
+      "color": "#f8a6b2"
+    },
+    "defense_leaf": {
+      "name": "Shield Leaf",
+      "effect": {
+        "shield": 10
+      },
+      "scalesWithFloor": true,
+      "scaleKey": "defenseLeaf",
+      "assetKey": "pickup.defenseLeaf",
+      "color": "#8ac68a"
+    },
+    "coin_bag": {
+      "name": "Bell Pouch",
+      "effect": {
+        "coins": 5
+      },
+      "assetKey": "pickup.coinBag",
+      "color": "#f7cd67"
+    },
+    "yellow_key": {
+      "name": "Yellow Key",
+      "effect": {
+        "yellowKeys": 1
+      },
+      "assetKey": "pickup.yellowKey",
+      "color": "#f7cd67"
+    },
+    "blue_key": {
+      "name": "Blue Key",
+      "effect": {
+        "blueKeys": 1
+      },
+      "assetKey": "pickup.blueKey",
+      "color": "#82d5bb"
+    }
+  },
+  "chests": {
+    "coin_chest": {
+      "name": "Bell Chest",
+      "description": "A tiny chest packed with cozy Bells.",
+      "reward": {
+        "coins": 12
+      },
+      "assetKey": "pickup.coinChest",
+      "color": "#f7cd67"
+    },
+    "growth_chest": {
+      "name": "Growth Chest",
+      "description": "Filled with flower-and-leaf training treats.",
+      "reward": {
+        "attack": 2,
+        "shield": 12
+      },
+      "assetKey": "pickup.growthChest",
+      "color": "#8ac68a"
+    },
+    "starlight_chest": {
+      "name": "Starlight Chest",
+      "description": "A rare pre-boss chest with a little Starlight to take home.",
+      "reward": {
+        "hp": 30,
+        "starlightShards": 1
+      },
+      "assetKey": "pickup.starlightChest",
+      "color": "#b77dee"
+    },
+    "key_chest": {
+      "name": "Key Chest",
+      "description": "Stuffed with jingling spare keys.",
+      "reward": {
+        "yellowKeys": 2,
+        "coins": 4
+      },
+      "assetKey": "pickup.coinChest",
+      "color": "#f7cd67"
+    },
+    "heart_chest": {
+      "name": "Heartwarming Chest",
+      "description": "Opens into a burst of warm heart-light.",
+      "reward": {
+        "hp": 70
+      },
+      "assetKey": "pickup.starlightChest",
+      "color": "#fc736d"
+    },
+    "shortcut_chest": {
+      "name": "Shortcut Chest",
+      "description": "Often found near shortcuts; great for topping up before pushing on.",
+      "reward": {
+        "blueKeys": 1,
+        "hp": 20
+      },
+      "assetKey": "pickup.growthChest",
+      "color": "#82d5bb"
+    },
+    "brave_chest": {
+      "name": "Bravery Chest",
+      "description": "A chest that rewards taking the combat-growth path.",
+      "reward": {
+        "attack": 1,
+        "shield": 10,
+        "coins": 5
+      },
+      "assetKey": "pickup.growthChest",
+      "color": "#e59266"
+    },
+    "souvenir_chest": {
+      "name": "Souvenir Chest",
+      "description": "May contain a furniture blueprint for town.",
+      "reward": {
+        "coins": 6,
+        "furnitureBlueprints": [
+          "cloud_cushion"
+        ]
+      },
+      "assetKey": "pickup.starlightChest",
+      "color": "#f8a6b2"
+    }
+  },
+  "blessings": {
+    "star_key": {
+      "name": "Starlight Key",
+      "description": "30% chance to gain 1 Yellow Key when entering a new floor.",
+      "unlock": "default",
+      "assetKey": "skill.starKey",
+      "color": "#f7cd67"
+    },
+    "honey_shield": {
+      "name": "Honey Shield",
+      "description": "The first hit you take in each fight deals 5 less damage.",
+      "unlock": "default",
+      "assetKey": "skill.honeyShield",
+      "color": "#f5c31c"
+    },
+    "shell_backpack": {
+      "name": "Shell Backpack",
+      "description": "Restore 4 HP whenever you open a door.",
+      "unlock": "default",
+      "assetKey": "skill.shellBackpack",
+      "color": "#82d5bb"
+    },
+    "petal_sword": {
+      "name": "Petal Sword",
+      "description": "Attack +3, but lose 2 HP at the start of each floor.",
+      "unlock": "starlight",
+      "assetKey": "skill.petalSword",
+      "color": "#f8a6b2"
+    },
+    "mushroom_friend": {
+      "name": "Mushroom Buddy",
+      "description": "25% chance to gain 2 extra Bells after combat.",
+      "unlock": "starlight",
+      "assetKey": "skill.mushroomFriend",
+      "color": "#e18c6f"
+    },
+    "wind_chime_sense": {
+      "name": "Wind Chime Sense",
+      "description": "Show expected HP loss for every enemy when entering a floor.",
+      "unlock": "starlight",
+      "assetKey": "skill.windChimeSense",
+      "color": "#19c8b9"
+    },
+    "clover_snack": {
+      "name": "Clover Snack",
+      "description": "All HP rewards give +5 extra this run.",
+      "unlock": "default",
+      "assetKey": "skill.honeyShield",
+      "color": "#6fba2c",
+      "effects": {
+        "hpRewardBonus": 5
+      }
+    },
+    "acorn_purse": {
+      "name": "Acorn Purse",
+      "description": "Gain +2 extra Bells whenever you earn Bells this run.",
+      "unlock": "default",
+      "assetKey": "skill.shellBackpack",
+      "color": "#dba90e",
+      "effects": {
+        "coinRewardBonus": 2
+      }
+    },
+    "tiny_boots": {
+      "name": "Tiny Tower Boots",
+      "description": "Expected HP loss is reduced by 3 in every fight this run.",
+      "unlock": "default",
+      "assetKey": "skill.windChimeSense",
+      "color": "#19c8b9",
+      "effects": {
+        "combatHpLossReduction": 3
+      }
+    },
+    "warm_cocoa": {
+      "name": "Warm Cocoa",
+      "description": "Starting on Floor 2, restore 8 HP at the start of each floor.",
+      "unlock": "default",
+      "assetKey": "skill.honeyShield",
+      "color": "#e59266",
+      "effects": {
+        "floorStartHeal": 8
+      }
+    },
+    "ribbon_keyring": {
+      "name": "Ribbon Keyring",
+      "description": "18% chance to refund the key spent when opening a door this run.",
+      "unlock": "default",
+      "assetKey": "skill.starKey",
+      "color": "#f8a6b2",
+      "effects": {
+        "doorRefundChance": 0.18
+      }
+    },
+    "brave_badge": {
+      "name": "Bravery Badge",
+      "description": "Attack +2 while HP is at half or lower.",
+      "unlock": "default",
+      "assetKey": "skill.petalSword",
+      "color": "#e05a5a",
+      "effects": {
+        "lowHpAttackBonus": 2
+      }
+    },
+    "leaf_umbrella": {
+      "name": "Leaf Umbrella",
+      "description": "Gain 8 Shield immediately this run.",
+      "unlock": "default",
+      "assetKey": "skill.shellBackpack",
+      "color": "#8ac68a",
+      "effects": {
+        "shieldBonus": 8
+      }
+    },
+    "picnic_box": {
+      "name": "Picnic Box",
+      "description": "Max HP +20 this run, and restore 20 HP immediately.",
+      "unlock": "default",
+      "assetKey": "skill.mushroomFriend",
+      "color": "#f7cd67",
+      "effects": {
+        "maxHpBonus": 20
+      }
+    },
+    "moon_button": {
+      "name": "Moon Button",
+      "description": "Attack +1 this run, and gain 8 Shield immediately.",
+      "unlock": "default",
+      "assetKey": "skill.windChimeSense",
+      "color": "#b77dee",
+      "effects": {
+        "attackBonus": 1,
+        "shieldBonus": 8
+      }
+    }
+  },
+  "events": {
+    "lost_postbird": {
+      "name": "Lost Postbird",
+      "description": "A little mail carrier with an oversized parcel is going in circles.",
+      "assetKey": "ui.lostPostbird",
+      "luckWeight": 1.15,
+      "choices": [
+        {
+          "label": "Give 1 Yellow Key",
+          "cost": {
+            "yellowKeys": 1
+          },
+          "reward": {
+            "coins": 15,
+            "furnitureBlueprints": [
+              "postbird_mailbox"
+            ]
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 3
+          }
+        },
+        {
+          "label": "Give 10 HP",
+          "cost": {
+            "hp": 10
+          },
+          "reward": {
+            "blueKeys": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 10
+          }
+        },
+        {
+          "label": "Point the way and leave",
+          "cost": {},
+          "reward": {},
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "mystery_tree_hole": {
+      "name": "Mystery Tree Hollow",
+      "description": "A chime rings inside the hollow; it seems to trade one thing for another.",
+      "assetKey": "ui.mysteryTreeHole",
+      "luckWeight": 1.35,
+      "choices": [
+        {
+          "label": "Toss in 5 Bells",
+          "cost": {
+            "coins": 5
+          },
+          "randomReward": [
+            "attack",
+            "shield",
+            "yellowKeys"
+          ],
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 2
+          }
+        },
+        {
+          "label": "Toss in 1 Blue Key",
+          "cost": {
+            "blueKeys": 1
+          },
+          "reward": {
+            "rareBlessing": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "starlightShards": 1
+          }
+        },
+        {
+          "label": "Leave",
+          "cost": {},
+          "reward": {},
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "mushroom_tea_party": {
+      "name": "Mushroom Tea Party",
+      "description": "A few mushrooms are having tea, and they saved you a tiny stool.",
+      "assetKey": "ui.mushroomTeaParty",
+      "luckWeight": 1.6,
+      "choices": [
+        {
+          "label": "Sip black tea",
+          "cost": {},
+          "reward": {
+            "hp": 20,
+            "furnitureBlueprints": [
+              "mushroom_tea_table"
+            ]
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 10
+          }
+        },
+        {
+          "label": "Eat a mushroom cookie",
+          "cost": {},
+          "reward": {
+            "attack": 2,
+            "shield": -6
+          },
+          "outcomeTier": "risky"
+        },
+        {
+          "label": "Take a snack for later",
+          "cost": {},
+          "randomReward": [
+            "hp",
+            "yellowKeys",
+            "coins"
+          ],
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 2
+          }
+        }
+      ]
+    },
+    "bell_fountain": {
+      "name": "Bell Fountain",
+      "description": "Shiny Bells drift in the fountain, reflecting starlight from the tower top.",
+      "assetKey": "ui.mysteryTreeHole",
+      "luckWeight": 1.25,
+      "choices": [
+        {
+          "label": "Wish with 3 Bells",
+          "cost": {
+            "coins": 3
+          },
+          "randomReward": [
+            "hp",
+            "yellowKeys",
+            "coins"
+          ],
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 4
+          }
+        },
+        {
+          "label": "Scoop up drifting Bells",
+          "cost": {},
+          "reward": {
+            "coins": 4
+          },
+          "outcomeTier": "neutral"
+        },
+        {
+          "label": "Trade 15 HP for a Blue Key",
+          "cost": {
+            "hp": 15
+          },
+          "reward": {
+            "blueKeys": 1
+          },
+          "outcomeTier": "risky"
+        }
+      ]
+    },
+    "sleepy_signpost": {
+      "name": "Sleepy Signpost",
+      "description": "A drowsy signpost points the way while its arrows turn on their own.",
+      "assetKey": "ui.lostPostbird",
+      "luckWeight": 1.1,
+      "choices": [
+        {
+          "label": "Gently straighten it",
+          "cost": {},
+          "reward": {
+            "yellowKeys": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 8
+          }
+        },
+        {
+          "label": "Follow the odd arrow",
+          "cost": {
+            "hp": 8
+          },
+          "randomReward": [
+            "attack",
+            "shield",
+            "blueKeys"
+          ],
+          "outcomeTier": "risky"
+        },
+        {
+          "label": "Sketch the route",
+          "cost": {},
+          "reward": {
+            "coins": 3
+          },
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "tiny_library": {
+      "name": "Tiny Library Nook",
+      "description": "A palm-sized book lies open, its pages show tower spirits' weak spots.",
+      "assetKey": "ui.furnitureCorner",
+      "luckWeight": 1.4,
+      "choices": [
+        {
+          "label": "Read the combat notes",
+          "cost": {},
+          "reward": {
+            "attack": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 2
+          }
+        },
+        {
+          "label": "Read the shield notes",
+          "cost": {},
+          "reward": {
+            "shield": 8
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 6
+          }
+        },
+        {
+          "label": "Borrow a bedtime book",
+          "cost": {
+            "coins": 4
+          },
+          "reward": {
+            "hp": 18
+          },
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "cloud_bakery": {
+      "name": "Cloud Bakery Stand",
+      "description": "The smell of soft bread drifts from a cloud-shaped stall.",
+      "assetKey": "ui.tanukiMerchant",
+      "luckWeight": 1.45,
+      "choices": [
+        {
+          "label": "Buy half a cloud bun",
+          "cost": {
+            "coins": 5
+          },
+          "reward": {
+            "hp": 35
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 10
+          }
+        },
+        {
+          "label": "Watch the stall for a moment",
+          "cost": {},
+          "reward": {
+            "coins": 6
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "yellowKeys": 1
+          }
+        },
+        {
+          "label": "Sample the spicy bread",
+          "cost": {
+            "hp": 6
+          },
+          "reward": {
+            "attack": 1
+          },
+          "outcomeTier": "risky"
+        }
+      ]
+    },
+    "firefly_lantern": {
+      "name": "Firefly Lantern",
+      "description": "Gentle firefly light glows inside, revealing nearby doors and chests.",
+      "assetKey": "ui.luckyWindChime",
+      "luckWeight": 1.5,
+      "choices": [
+        {
+          "label": "Borrow a little light",
+          "cost": {},
+          "reward": {
+            "hp": 12,
+            "coins": 3,
+            "furnitureBlueprints": [
+              "firefly_lamp"
+            ]
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "shield": 8
+          }
+        },
+        {
+          "label": "Trade a Blue Key for a Blessing",
+          "cost": {
+            "blueKeys": 1
+          },
+          "reward": {
+            "rareBlessing": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "starlightShards": 1
+          }
+        },
+        {
+          "label": "Pass quietly",
+          "cost": {},
+          "reward": {},
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "button_tailor": {
+      "name": "Button Tailor",
+      "description": "A tiny tailor is sewing cloak buttons and offers to reinforce your gear.",
+      "assetKey": "ui.cottage",
+      "luckWeight": 1.35,
+      "choices": [
+        {
+          "label": "Sew on a shield button",
+          "cost": {
+            "coins": 6
+          },
+          "reward": {
+            "shield": 16,
+            "furnitureBlueprints": [
+              "button_stool"
+            ]
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 8
+          }
+        },
+        {
+          "label": "Sew on a courage button",
+          "cost": {
+            "coins": 6
+          },
+          "reward": {
+            "attack": 2
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 3
+          }
+        },
+        {
+          "label": "Skip the fitting",
+          "cost": {},
+          "reward": {},
+          "outcomeTier": "neutral"
+        }
+      ]
+    },
+    "key_well": {
+      "name": "Key Well",
+      "description": "A jingle rises from the well, as if keys are turning below the water.",
+      "assetKey": "ui.mysteryTreeHole",
+      "luckWeight": 1.3,
+      "choices": [
+        {
+          "label": "Lower a rope and fish around",
+          "cost": {
+            "coins": 4
+          },
+          "reward": {
+            "yellowKeys": 2
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "coins": 2
+          }
+        },
+        {
+          "label": "Use a Blue Key as a guide",
+          "cost": {
+            "blueKeys": 1
+          },
+          "reward": {
+            "attack": 1,
+            "shield": 8,
+            "starlightShards": 1
+          },
+          "outcomeTier": "good",
+          "luckyBonus": {
+            "hp": 10
+          }
+        },
+        {
+          "label": "Just listen to the jingle",
+          "cost": {},
+          "reward": {
+            "coins": 2
+          },
+          "outcomeTier": "neutral"
+        }
+      ]
+    }
+  },
+  "shops": {
+    "tanuki_merchant": {
+      "name": "Tanuki Merchant",
+      "description": "He opens his pack, full of cozy little supplies.",
+      "assetKey": "ui.tanukiMerchant",
+      "items": [
+        {
+          "pickupId": "yellow_key",
+          "price": 6
+        },
+        {
+          "pickupId": "blue_key",
+          "price": 14
+        },
+        {
+          "pickupId": "small_heart",
+          "price": 5
+        },
+        {
+          "pickupId": "attack_flower",
+          "price": 12
+        },
+        {
+          "pickupId": "defense_leaf",
+          "price": 12
+        }
+      ]
+    }
+  },
+  "townFacilities": {
+    "cottage": {
+      "name": "Cottage",
+      "shortName": "Cottage",
+      "icon": "Home",
+      "assetKey": "ui.cottage",
+      "color": "#f7cd67",
+      "description": "Start each run feeling brighter. Each level gives starting HP +10.",
+      "nextLevelTemplate": "Next level: starting HP +10."
+    },
+    "trainingStump": {
+      "name": "Training Stump",
+      "shortName": "Stump",
+      "icon": "Sword",
+      "assetKey": "ui.trainingStump",
+      "color": "#e59266",
+      "description": "A daily practice tap. Each level gives starting Attack +1.",
+      "nextLevelTemplate": "Next level: starting Attack +1."
+    },
+    "guardianLeaf": {
+      "name": "Guardian Leaf",
+      "shortName": "Leaf",
+      "icon": "Leaf",
+      "assetKey": "ui.guardianLeaf",
+      "color": "#8ac68a",
+      "description": "Set out with a leafy charm. Each level gives starting Shield +8.",
+      "nextLevelTemplate": "Next level: starting Shield +8."
+    },
+    "keyShop": {
+      "name": "Key Shop",
+      "shortName": "Key Shop",
+      "icon": "Key",
+      "assetKey": "ui.keyShop",
+      "color": "#82d5bb",
+      "description": "Adds a starting Yellow Key and shop key discounts.",
+      "nextLevelTemplate": "Lv.1: starting Yellow Key +1. Lv.2: shop key prices -15%."
+    },
+    "luckyWindChime": {
+      "name": "Lucky Chime",
+      "shortName": "Chime",
+      "icon": "Chime",
+      "assetKey": "ui.luckyWindChime",
+      "color": "#b77dee",
+      "description": "Makes event outcomes more likely to turn out well.",
+      "nextLevelTemplate": "Next level: good event outcome weight increases."
+    },
+    "furnitureCorner": {
+      "name": "Furniture Corner",
+      "shortName": "Furniture",
+      "icon": "Shelf",
+      "assetKey": "ui.furnitureCorner",
+      "color": "#f8a6b2",
+      "description": "Displays furniture blueprints. No combat stats.",
+      "nextLevelTemplate": "No upgrades here; it displays furniture blueprints brought back from clears."
+    }
+  },
+  "furnitureBlueprints": {
+    "sleepy_tree_lamp": {
+      "name": "Tree Spirit Night-Light",
+      "description": "A keepsake earned after clearing the Drowsy Tree Spirit.",
+      "assetKey": "ui.sleepyTreeLamp"
+    },
+    "cloud_cushion": {
+      "name": "Cloud Cushion",
+      "description": "A town decoration brought back from a Souvenir Chest.",
+      "assetKey": "ui.sleepyTreeLamp"
+    },
+    "postbird_mailbox": {
+      "name": "Postbird Mailbox",
+      "description": "Town remembers the day you helped the little postbird.",
+      "assetKey": "ui.lostPostbird"
+    },
+    "mushroom_tea_table": {
+      "name": "Mushroom Tea Table",
+      "description": "A warm keepsake from the Mushroom Tea Party.",
+      "assetKey": "ui.mushroomTeaParty"
+    },
+    "firefly_lamp": {
+      "name": "Firefly Lamp",
+      "description": "A collectible inspired by the Firefly Lantern event.",
+      "assetKey": "ui.luckyWindChime"
+    },
+    "button_stool": {
+      "name": "Button Stool",
+      "description": "A cute little stool gifted to town by the Button Tailor.",
+      "assetKey": "ui.cottage"
+    }
+  }
+}

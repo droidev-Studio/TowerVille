@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TowerVille: Storybook Tower</title>
+    <link rel="stylesheet" href="game.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Cozy Magic Tower</p>
+          <h1>TowerVille</h1>
+        </div>
+        <div class="topbar-actions">
+          <button id="newRunButton" class="press-button primary" type="button">Enter Tower</button>
+          <button id="townButton" class="press-button" type="button">Town</button>
+          <button id="audioButton" class="icon-button" type="button" aria-label="Audio settings">♪</button>
+          <button id="helpButton" class="icon-button" type="button" aria-label="Help">?</button>
+        </div>
+      </header>
+
+      <main class="game-layout">
+        <section class="play-section" aria-label="Tower room">
+          <div class="canvas-wrap">
+            <canvas id="gameCanvas" width="760" height="760" aria-label="TowerVille game canvas"></canvas>
+            <div id="stateOverlay" class="state-overlay">
+              <h2>Welcome to TowerVille</h2>
+              <p>Set out from town and explore today's storybook tower.</p>
+              <button id="overlayStartButton" class="press-button primary" type="button">Start Run</button>
+            </div>
+          </div>
+          <div class="mobile-controls" aria-label="Movement controls">
+            <button class="move-button" data-action="MOVE_UP" type="button">↑</button>
+            <div>
+              <button class="move-button" data-action="MOVE_LEFT" type="button">←</button>
+              <button class="move-button" data-action="MOVE_DOWN" type="button">↓</button>
+              <button class="move-button" data-action="MOVE_RIGHT" type="button">→</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="side-panel" aria-label="Game info">
+          <section class="info-band">
+            <div>
+              <span>Floor</span>
+              <strong id="floorLabel">Town</strong>
+            </div>
+            <div>
+              <span>Status</span>
+              <strong id="stateLabel">Ready</strong>
+            </div>
+          </section>
+
+          <section class="stats-grid" aria-label="Player stats">
+            <div><span>HP</span><strong id="hpValue">-</strong></div>
+            <div><span>⚔️</span><strong id="attackValue">-</strong></div>
+            <div><span>Shield</span><strong id="defenseValue">-</strong></div>
+            <div><span>Bells</span><strong id="coinsValue">-</strong></div>
+            <div><span>Yellow Key</span><strong id="yellowKeysValue">-</strong></div>
+            <div><span>Blue Key</span><strong id="blueKeysValue">-</strong></div>
+          </section>
+
+          <section class="message-panel">
+            <h2>Floor Goal</h2>
+            <div id="goalPanel" class="goal-panel">Shown after entering the tower.</div>
+          </section>
+
+          <section class="message-panel">
+            <h2>Inspect / Action</h2>
+            <div id="forecastPanel" class="forecast-panel">Move next to a tile to preview the result.</div>
+          </section>
+
+          <section class="message-panel">
+            <h2>Blessings</h2>
+            <div id="blessingList" class="blessing-list">No blessings yet this run.</div>
+          </section>
+
+          <section class="message-panel">
+            <h2>Log</h2>
+            <div id="logPanel" class="log-panel"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <div id="modalBackdrop" class="modal-backdrop hidden">
+      <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h2 id="modalTitle">Title</h2>
+        <p id="modalBody">Details</p>
+        <div id="modalOptions" class="modal-options"></div>
+        <div class="modal-footer">
+          <button id="modalCloseButton" class="press-button" type="button">Close</button>
+        </div>
+      </section>
+    </div>
+
+    <script src="GameSettings.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>

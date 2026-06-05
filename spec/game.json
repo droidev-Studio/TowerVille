@@ -1,0 +1,51 @@
+{
+  "id": "towerville_magic_tower_roguelite",
+  "title": "TowerVille",
+  "subtitle": "Storybook Tower Roguelite",
+  "version": "0.1.0",
+  "language": "en-US",
+  "runtime": {
+    "type": "html5-canvas-2d",
+    "requiresStaticServer": true,
+    "scriptOrder": [
+      "GameSettings.js",
+      "game.js"
+    ],
+    "usesBuildStep": false
+  },
+  "canvas": {
+    "width": 760,
+    "height": 760,
+    "scaleMode": "fit",
+    "safeArea": true
+  },
+  "modules": {
+    "town": true,
+    "magicTower": true,
+    "rogueliteBlessings": true,
+    "events": true,
+    "shop": true,
+    "boss": true,
+    "audioFallback": true,
+    "assetManifest": true
+  },
+  "storage": {
+    "key": "towerville_save_v1",
+    "version": 1
+  },
+  "content": {
+    "levels": "spec/levels.json",
+    "entities": "spec/entities.json",
+    "prefabs": "spec/prefabs.json",
+    "manifest": "assets/manifest.json"
+  },
+  "initialRun": {
+    "towerFloors": 10,
+    "roomSize": 7,
+    "startFloor": 1,
+    "startPosition": {
+      "x": 1,
+      "y": 5
+    }
+  }
+}

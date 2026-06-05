@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "image": "66bf570f-4137-4365-a96a-8055ca30776a.png",
+  "exportedAt": "2026-06-05T08:59:21.952Z",
+  "type": "mapWithObstacles",
+  "mapWidth": 1254,
+  "mapHeight": 1254,
+  "gridSize": 32,
+  "collisionRule": {
+    "blockMode": "allEntityObstacle",
+    "affects": "allEntities",
+    "ignoredByTags": [
+      "ignoreCollisionEnemy"
+    ]
+  },
+  "obstacleCount": 7,
+  "collisionObjects": [
+    {
+      "id": "cottage",
+      "file": "collision/cottage.png",
+      "townSpotId": "cottage",
+      "label": "Cottage",
+      "role": "homeHpUpgrade"
+    },
+    {
+      "id": "trainingStump",
+      "file": "collision/stump.png",
+      "townSpotId": "trainingStump",
+      "label": "Training Stump",
+      "role": "attackUpgrade"
+    },
+    {
+      "id": "guardianLeaf",
+      "file": "collision/leaf.png",
+      "townSpotId": "guardianLeaf",
+      "label": "Guardian Leaf",
+      "role": "shieldUpgrade"
+    },
+    {
+      "id": "keyShop",
+      "file": "collision/key shop.png",
+      "townSpotId": "keyShop",
+      "label": "Key Shop",
+      "role": "keyEconomy"
+    },
+    {
+      "id": "luckyWindChime",
+      "file": "collision/chime.png",
+      "townSpotId": "luckyWindChime",
+      "label": "Lucky Wind Chime",
+      "role": "eventLuck"
+    },
+    {
+      "id": "furnitureCorner",
+      "file": "collision/furniture.png",
+      "townSpotId": "furnitureCorner",
+      "label": "Furniture Corner",
+      "role": "collection"
+    },
+    {
+      "id": "towerEntry",
+      "file": "collision/Tower Entrance.png",
+      "townSpotId": "towerEntry",
+      "label": "Tower Entrance",
+      "role": "runStart"
+    }
+  ]
+}

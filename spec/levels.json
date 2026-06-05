@@ -1,0 +1,584 @@
+{
+  "towerId": "storybook_tower",
+  "roomSize": 7,
+  "floors": [
+    {
+      "floor": 1,
+      "name": "Honeywood Practice",
+      "template": "split_garden",
+      "enemyPool": [
+        "grumpy_mushroom"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "grumpy_mushroom",
+          "x": 2,
+          "y": 5
+        },
+        {
+          "type": "pickup",
+          "id": "attack_flower",
+          "x": 3,
+          "y": 5
+        },
+        {
+          "type": "pickup",
+          "id": "small_heart",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "type": "pickup",
+          "id": "yellow_key",
+          "x": 4,
+          "y": 3
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 5,
+          "y": 3,
+          "role": "main_gate",
+          "hint": "Tutorial main gate: opens the path toward the stairs, with a Bell Pouch along the way."
+        },
+        {
+          "type": "pickup",
+          "id": "coin_bag",
+          "x": 5,
+          "y": 4
+        }
+      ]
+    },
+    {
+      "floor": 2,
+      "name": "Honeywood Gate",
+      "template": "market_turn",
+      "enemyPool": [
+        "grumpy_mushroom",
+        "tangled_vine"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "grumpy_mushroom",
+          "x": 1,
+          "y": 4,
+          "randomFrom": [
+            "grumpy_mushroom",
+            "tangled_vine"
+          ]
+        },
+        {
+          "type": "enemy",
+          "id": "tangled_vine",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 3,
+          "y": 3,
+          "role": "treasure_gate",
+          "hint": "Behind it are a Shield Leaf and safe healing; spend a key to reduce future damage."
+        },
+        {
+          "type": "pickup",
+          "id": "defense_leaf",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "coin_bag",
+          "x": 5,
+          "y": 5
+        },
+        {
+          "type": "pickup",
+          "id": "small_heart",
+          "x": 2,
+          "y": 2,
+          "randomFrom": [
+            "small_heart",
+            "coin_bag"
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 3,
+      "name": "First Blessing",
+      "template": "three_paths",
+      "enemyPool": [
+        "grumpy_mushroom",
+        "tangled_vine",
+        "shell_crab",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "grantBlessingAfterClear": true,
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "tangled_vine",
+          "x": 2,
+          "y": 5
+        },
+        {
+          "type": "enemy",
+          "id": "shell_crab",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "type": "pickup",
+          "id": "yellow_key",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 4,
+          "y": 3,
+          "role": "main_gate",
+          "hint": "Main gate: leads toward the right-side stair route, with an Attack Flower on the way."
+        },
+        {
+          "type": "pickup",
+          "id": "attack_flower",
+          "x": 5,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "big_heart",
+          "x": 2,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "floor": 4,
+      "name": "Tanuki Merchant",
+      "template": "shop_crossroad",
+      "enemyPool": [
+        "grumpy_mushroom",
+        "tangled_vine",
+        "shell_crab",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "placements": [
+        {
+          "type": "shop",
+          "id": "tanuki_merchant",
+          "x": 3,
+          "y": 4
+        },
+        {
+          "type": "enemy",
+          "id": "shell_crab",
+          "x": 2,
+          "y": 4
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 4,
+          "y": 3,
+          "role": "shortcut_gate",
+          "hint": "Shortcut gate: reaches the Blue Key and Postbird event faster, skipping some combat pressure."
+        },
+        {
+          "type": "pickup",
+          "id": "blue_key",
+          "x": 5,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "coin_bag",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "type": "event",
+          "id": "lost_postbird",
+          "x": 5,
+          "y": 5,
+          "randomFrom": [
+            "lost_postbird",
+            "mushroom_tea_party",
+            "mystery_tree_hole"
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 5,
+      "name": "Little Guardian",
+      "template": "guard_gate",
+      "enemyPool": [
+        "tangled_vine",
+        "shell_crab",
+        "toy_knight",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "risk_chest"
+      ],
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "toy_knight",
+          "x": 3,
+          "y": 3
+        },
+        {
+          "type": "pickup",
+          "id": "big_heart",
+          "x": 2,
+          "y": 5
+        },
+        {
+          "type": "chest",
+          "id": "coin_chest",
+          "x": 5,
+          "y": 5
+        },
+        {
+          "type": "door",
+          "id": "door_blue",
+          "x": 4,
+          "y": 2,
+          "role": "shortcut_gate",
+          "hint": "Blue-key shortcut: gets you closer to the stairs and Attack Flower while skipping part of the guardian route."
+        },
+        {
+          "type": "pickup",
+          "id": "attack_flower",
+          "x": 5,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "floor": 6,
+      "name": "Second Blessing",
+      "template": "blue_shortcut",
+      "enemyPool": [
+        "tangled_vine",
+        "shell_crab",
+        "sleepy_ghost",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "grantBlessingAfterClear": true,
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "shell_crab",
+          "x": 2,
+          "y": 5,
+          "randomFrom": [
+            "tangled_vine",
+            "shell_crab",
+            "training_dummy"
+          ]
+        },
+        {
+          "type": "enemy",
+          "id": "sleepy_ghost",
+          "x": 5,
+          "y": 4
+        },
+        {
+          "type": "door",
+          "id": "door_blue",
+          "x": 3,
+          "y": 3,
+          "role": "shortcut_gate",
+          "hint": "Shortcut gate: spend a Blue Key to cross the center and avoid some high-damage routes."
+        },
+        {
+          "type": "pickup",
+          "id": "attack_flower",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "yellow_key",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "type": "event",
+          "id": "mushroom_tea_party",
+          "x": 5,
+          "y": 2,
+          "randomFrom": [
+            "lost_postbird",
+            "mushroom_tea_party",
+            "mystery_tree_hole"
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 7,
+      "name": "Hollow Exchange",
+      "template": "risk_chest",
+      "enemyPool": [
+        "shell_crab",
+        "sleepy_ghost",
+        "toy_knight",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "risk_chest"
+      ],
+      "placements": [
+        {
+          "type": "event",
+          "id": "mystery_tree_hole",
+          "x": 2,
+          "y": 4,
+          "randomFrom": [
+            "lost_postbird",
+            "mushroom_tea_party",
+            "mystery_tree_hole"
+          ]
+        },
+        {
+          "type": "enemy",
+          "id": "sleepy_ghost",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 3,
+          "y": 2,
+          "role": "treasure_gate",
+          "hint": "Treasure gate: contains a Blue Key to prepare for later premium doors."
+        },
+        {
+          "type": "pickup",
+          "id": "blue_key",
+          "x": 4,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "big_heart",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "type": "chest",
+          "id": "growth_chest",
+          "x": 5,
+          "y": 5,
+          "randomFrom": [
+            "growth_chest",
+            "coin_chest"
+          ]
+        }
+      ]
+    },
+    {
+      "floor": 8,
+      "name": "Resource Pressure",
+      "template": "key_pressure",
+      "enemyPool": [
+        "shell_crab",
+        "sleepy_ghost",
+        "toy_knight",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "safe_stairs"
+      ],
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "toy_knight",
+          "x": 2,
+          "y": 5
+        },
+        {
+          "type": "enemy",
+          "id": "shell_crab",
+          "x": 5,
+          "y": 4,
+          "randomFrom": [
+            "shell_crab",
+            "sleepy_ghost"
+          ]
+        },
+        {
+          "type": "door",
+          "id": "door_yellow",
+          "x": 3,
+          "y": 4,
+          "role": "main_gate",
+          "hint": "Main gate: controls the route toward the stair side and tests your Yellow Key stock."
+        },
+        {
+          "type": "door",
+          "id": "door_blue",
+          "x": 4,
+          "y": 2,
+          "role": "shortcut_gate",
+          "hint": "Blue-key shortcut: reaches upper-right resources earlier and lowers route pressure."
+        },
+        {
+          "type": "pickup",
+          "id": "defense_leaf",
+          "x": 5,
+          "y": 2,
+          "randomFrom": [
+            "defense_leaf",
+            "attack_flower"
+          ]
+        },
+        {
+          "type": "pickup",
+          "id": "yellow_key",
+          "x": 1,
+          "y": 3
+        }
+      ]
+    },
+    {
+      "floor": 9,
+      "name": "Final Prep",
+      "template": "final_prep",
+      "enemyPool": [
+        "sleepy_ghost",
+        "toy_knight",
+        "training_dummy"
+      ],
+      "routeTypes": [
+        "combat_growth",
+        "key_shortcut",
+        "risk_chest",
+        "safe_stairs"
+      ],
+      "grantBlessingAfterClear": true,
+      "placements": [
+        {
+          "type": "enemy",
+          "id": "sleepy_ghost",
+          "x": 2,
+          "y": 5,
+          "randomFrom": [
+            "sleepy_ghost",
+            "toy_knight"
+          ]
+        },
+        {
+          "type": "enemy",
+          "id": "toy_knight",
+          "x": 4,
+          "y": 4
+        },
+        {
+          "type": "shop",
+          "id": "tanuki_merchant",
+          "x": 1,
+          "y": 2
+        },
+        {
+          "type": "door",
+          "id": "door_blue",
+          "x": 4,
+          "y": 5,
+          "role": "treasure_gate",
+          "hint": "Pre-boss treasure gate: a Big Heart waits behind it, perfect before challenging the tree spirit."
+        },
+        {
+          "type": "chest",
+          "id": "starlight_chest",
+          "x": 5,
+          "y": 5
+        },
+        {
+          "type": "pickup",
+          "id": "attack_flower",
+          "x": 5,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "defense_leaf",
+          "x": 3,
+          "y": 2
+        }
+      ]
+    },
+    {
+      "floor": 10,
+      "name": "Drowsy Tree Spirit",
+      "template": "boss_room",
+      "isBossFloor": true,
+      "routeTypes": [
+        "boss_route",
+        "safe_stairs"
+      ],
+      "placements": [
+        {
+          "type": "boss",
+          "id": "sleepy_tree_spirit",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "type": "pickup",
+          "id": "small_heart",
+          "x": 1,
+          "y": 4
+        },
+        {
+          "type": "pickup",
+          "id": "small_heart",
+          "x": 5,
+          "y": 4
+        }
+      ]
+    }
+  ]
+}
