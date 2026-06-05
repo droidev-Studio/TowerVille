@@ -256,7 +256,6 @@
     });
 
     runtime.dom.newRunButton.addEventListener("click", handleStartButton);
-    runtime.dom.overlayStartButton.addEventListener("click", startNewRun);
     runtime.dom.townButton.addEventListener("click", handleTownButton);
     runtime.dom.audioButton.addEventListener("click", showAudioModal);
     runtime.dom.helpButton.addEventListener("click", showHelpModal);
@@ -413,6 +412,7 @@
     }
     if (runtime.state === GAME_STATES.TOWN) {
       overlay.classList.add("hidden");
+      runtime.dom.overlayStartButton.disabled = false;
       return;
     }
     if (runtime.state === GAME_STATES.BOOT) {
@@ -420,12 +420,21 @@
       runtime.dom.overlayTitle.textContent = "Packing Your Bag";
       runtime.dom.overlayBody.textContent = "Loading settings, floors, and tower spirit notes.";
       runtime.dom.overlayStartButton.textContent = "Please wait";
+      runtime.dom.overlayStartButton.disabled = true;
+      runtime.dom.overlayStartButton.onclick = null;
       return;
     }
     overlay.classList.add("hidden");
+    runtime.dom.overlayStartButton.disabled = false;
   }
 
   function startNewRun() {
+    if (!runtime.spec || !runtime.levels || !runtime.entities) {
+      showOverlay("Still Loading", "The tower is still packing its bags. Please try again in a moment.", "Please wait", null);
+      runtime.dom.overlayStartButton.disabled = true;
+      return;
+    }
+    ensureSave();
     ensureAudio();
     const seed = createRunSeed();
     runtime.floatingTexts = [];
@@ -761,7 +770,8 @@
   }
 
   function createPlayerFromSave() {
-    const facilities = runtime.save.facilities;
+    const save = ensureSave();
+    const facilities = save.facilities;
     const metaSettings = window.getGameSetting("META.facilities", {});
     const cottageLevel = facilities.cottage || 0;
     const stumpLevel = facilities.trainingStump || 0;
@@ -1908,13 +1918,18 @@
     try {
       const raw = localStorage.getItem(window.getGameSetting("CORE_RULES.saveKey", "towerville_save_v1"));
       if (!raw) {
-        return fallback;
+        return normalizeSave(fallback);
       }
-      return mergeSave(fallback, JSON.parse(raw));
+      return normalizeSave(mergeSave(fallback, JSON.parse(raw)));
     } catch (error) {
       console.warn("[Save] Failed to read save. Using defaults.", error);
-      return fallback;
+      return normalizeSave(fallback);
     }
+  }
+
+  function ensureSave() {
+    runtime.save = normalizeSave(runtime.save);
+    return runtime.save;
   }
 
   function createDefaultSave() {
@@ -1946,6 +1961,9 @@
   function mergeSave(base, incoming) {
     const output = typeof structuredClone === "function" ? structuredClone(base) : JSON.parse(JSON.stringify(base));
     Object.keys(incoming || {}).forEach((key) => {
+      if (incoming[key] === null || incoming[key] === undefined) {
+        return;
+      }
       if (incoming[key] && typeof incoming[key] === "object" && !Array.isArray(incoming[key])) {
         output[key] = { ...(output[key] || {}), ...incoming[key] };
       } else {
@@ -1953,6 +1971,20 @@
       }
     });
     return output;
+  }
+
+  function normalizeSave(candidate) {
+    const fallback = createDefaultSave();
+    const save = mergeSave(fallback, candidate && typeof candidate === "object" ? candidate : {});
+    save.resources = { ...fallback.resources, ...(save.resources && typeof save.resources === "object" ? save.resources : {}) };
+    save.facilities = { ...fallback.facilities, ...(save.facilities && typeof save.facilities === "object" ? save.facilities : {}) };
+    save.unlocks = { ...fallback.unlocks, ...(save.unlocks && typeof save.unlocks === "object" ? save.unlocks : {}) };
+    save.unlocks.blessings = Array.isArray(save.unlocks.blessings) ? save.unlocks.blessings : [];
+    save.unlocks.towerThemes = Array.isArray(save.unlocks.towerThemes) ? save.unlocks.towerThemes : [];
+    save.unlocks.characterSkins = Array.isArray(save.unlocks.characterSkins) ? save.unlocks.characterSkins : [];
+    save.furnitureBlueprints = Array.isArray(save.furnitureBlueprints) ? save.furnitureBlueprints : [];
+    save.stats = { ...fallback.stats, ...(save.stats && typeof save.stats === "object" ? save.stats : {}) };
+    return save;
   }
 
   function saveGame() {
