@@ -1040,9 +1040,7 @@
       return false;
     }
     if (occupant.type === OCCUPANT.SHOP) {
-      runtime.run.stats.shopsVisited += 1;
-      showShopModal(occupant.id);
-      return false;
+      return resolveShop(cell, occupant);
     }
     return true;
   }
@@ -1098,6 +1096,17 @@
     setActionNotice(`Open ${chest.name}: ${describeReward(chest.reward).replace(/^Reward: /, "")}`, "safe");
     addFloatingText(cell.x, cell.y, "Chest +" + describeBundle(chest.reward), chest.color || "#b77dee");
     playSfx("chest");
+    return true;
+  }
+
+  function resolveShop(cell, occupant) {
+    const shop = runtime.entities.shops[occupant.id];
+    cell.occupant = null;
+    runtime.run.stats.shopsVisited += 1;
+    addRunLog(`${shop.name} opens a tiny stall, then packs up after this visit.`);
+    setActionNotice(`${shop.name}: one visit only`, "safe");
+    addFloatingText(cell.x, cell.y, "Shop visit", shop.color || "#3aa7d8");
+    showShopModal(occupant.id);
     return true;
   }
 
@@ -2202,7 +2211,7 @@
       return { message: `${runtime.entities.events[occupant.id].name}: open an event choice.`, tone: "safe" };
     }
     if (occupant.type === OCCUPANT.SHOP) {
-      return { message: "Tanuki Merchant: sells keys, Hearts, Attack Flowers, and Shield Leaves.", tone: "safe" };
+      return { message: "Tanuki Merchant\nOne-time visit: stepping here opens the shop, moves you onto this tile, and the merchant leaves after this visit.\nSells keys, Hearts, Attack Flowers, Shield Leaves, and one Attack training.", tone: "safe" };
     }
     if (occupant.type === OCCUPANT.ENEMY || occupant.type === OCCUPANT.BOSS) {
       const forecast = getCombatForecast(occupant);
