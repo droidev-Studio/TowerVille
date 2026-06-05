@@ -2001,6 +2001,9 @@
     }
     updateAudioButton();
     const run = runtime.run;
+    if (run && runtime.state === GAME_STATES.TOWN) {
+      runtime.state = GAME_STATES.RUNNING;
+    }
     runtime.dom.floorLabel.textContent = run ? `${run.floorNumber}F` : "Town";
     runtime.dom.stateLabel.textContent = getStateText(runtime.state);
 
